@@ -8,7 +8,7 @@
 
 
 
-   {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store']) !!}
+   {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store' , 'files'=>true]) !!}
 
 
             {{csrf_field()}}
@@ -24,7 +24,6 @@
             </div>
 
 
-
             <div class="form-group">
                 {!! Form::label('status', 'Status:') !!}
                 {!! Form::select('is_active',array(1=>'Active', 0 =>'Not Active'), 0, ['class'=>'form-control']) !!}
@@ -35,6 +34,11 @@
                 {!! Form::select('role_id', [''=>'Choose Options'] + $roles , null, ['class'=>'form-control']) !!}
             </div>
 
+            <div class="form-group">
+                   {!! Form::label('file', 'File:') !!}
+                   {!! Form::file('file', null, ['class'=>'form-control']) !!}
+             </div>
+
 
             <div class="form-group">
                 {!! Form::label('password', 'Password:') !!}
@@ -43,11 +47,11 @@
 
 
 
-        <div class="form-group">
-               {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
-           </div>
+            <div class="form-group">
+                {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
+            </div>
 
-           {!! Form::close() !!}
+               {!! Form::close() !!}
 
         @include('includes.form_error')
 
