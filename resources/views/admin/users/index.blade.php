@@ -8,17 +8,18 @@
 
 
      <table class="table">
-         <thead>
-               <tr>
-                 <th>Id</th>
-                 <th>Name</th>
-                 <th>Email</th>
-                 <th>Role</th>
-                 <th>Status</th>
-                 <th>Created</th>
-                 <th>Updated</th>
-               </tr>
-         </thead>
+             <thead>
+                   <tr>
+                     <th>Id</th>
+                     <th>Photo</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Role</th>
+                     <th>Status</th>
+                     <th>Created</th>
+                     <th>Updated</th>
+                   </tr>
+             </thead>
          <tbody>
 
 
@@ -29,7 +30,8 @@
 
                  <tr>
                      <td>{{$user->id}}</td>
-                     <td>{{$user->name}}</td>
+                     <td><img src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt="" height="50" > </td>
+                     <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}} </a></td>
                      <td>{{$user->email}}</td>
                      <td>{{$user->role->name}}</td>
                      <td>{{$user->is_active === 1 ? 'Active' : 'Not active' }}</td>
