@@ -54,7 +54,7 @@
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user fa-fw"></i>{{ Auth::user()->name }} <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -116,7 +116,10 @@
                         <!-- /input-group -->
                     </li>
                     <li>
+                        {{--<a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>--}}
                         <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+
+
                     </li>
 
                     <li>

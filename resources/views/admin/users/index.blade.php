@@ -5,6 +5,13 @@
 
 
 
+    @if(Session::has('Deleted_user'))
+
+
+        <p class="bg-danger">{{session('Deleted_user')}}</p>
+
+    @endif
+
 
 
      <table class="table">
