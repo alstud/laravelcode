@@ -80,8 +80,6 @@ class AdminUsersController extends Controller
         }
 
 
-
-
         User::create($input);
 
 
@@ -191,11 +189,17 @@ class AdminUsersController extends Controller
     {
         //
 
-        User::findOrfail($id)->delete();
+        $user = User::findOrfail($id);
 
 
-//        Session::flash('Deleted_user','The user has been deleted');
-          Session::flash('Deleted_user','The user has been deleted');
+        unlink(public_path(). $user->photo->file);
+
+
+        $user->delete();
+
+
+        Session::flash('Deleted_user','The user has been deleted');
+
 
         return redirect('/admin/users');
 
